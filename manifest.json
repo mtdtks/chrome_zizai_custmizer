@@ -11,5 +11,6 @@
         "matches": ["https://www.kosho.or.jp/koshoadmin/*"],
         "js": ["jquery-2.1.4.min.js","main.js"]
       }
-    ]
+    ],
+    "options_page": "option.html"
 }
