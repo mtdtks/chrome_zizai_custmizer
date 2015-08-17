@@ -28,7 +28,7 @@ function start() {
 
 //====={初期設定}======================
 
-var place = "12_配送センター";
+//var place = "12_配送センター";
 //'12_配送センター' : '12_配送センター',
 //'10_支店' : '10_支店',
 //'9_本店' : '9_本店',
@@ -558,9 +558,8 @@ function selectchange8(){
 
 
 //初期値の自動入力
-function default_val(){
+function default_val(place){
     //入力されていた場合は実行しない
-
     //場所を入力
     sp=document.getElementsByName("stock_place");
     if(sp.item(0).value===""){
@@ -688,15 +687,29 @@ if ( re.test(url) ){
     var idval = trval.match(/\d{8}/);　//8桁の数字
     console.log('NH_Original_ID:' + idval);
 
+    //background.jsから取得する
+    chrome.runtime.sendMessage({method: "getLocalStorage", key: "test"}, function(response) {
+        //test
+        //alert(response.data);
+        var obj = JSON.parse(response.data);
+        //test
+        //alert(obj['place']);
+        var optionPlace = obj['place'];
+        //alert(optionPlace);
+        //runtime内からしか参照できない
+        default_val(optionPlace);
+
+    });
+
     if (idval === null){ //新規入力
         change_pulldown();
-        default_val();
+    //    default_val();
         console.log('zizai_mask:input_mode=enabled');
     } else {
         console.log('zizai_mask:edit_mode=enabled');　//更新、既に入力されている場合はデフォルトを変更しない。
     }
-}
 
+}
 
 
 
