@@ -3,7 +3,9 @@
     "name": "zizai_customizer",
     "description": "for zizai worker.",
     "version": "0.0.0.3",
+
     "permissions": [
+      "background"
     ],
 
     "background": {

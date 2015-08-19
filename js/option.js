@@ -1,11 +1,13 @@
 //test
+//alert("test");
 //get_default
+/*
 $(function() {
     var str = localStorage.getItem("test");
     var obj = JSON.parse(str);
     alert(obj['place']);
 });
-
+*/
 // localStorageのキー
 var key = "test";  
 // localStorageの文字列をJSONで取得
