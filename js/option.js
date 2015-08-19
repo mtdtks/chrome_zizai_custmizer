@@ -44,6 +44,7 @@ $(function(){
         var key = $('#key').val();
         var key2 = $('#key2').val();
         var value = $('#value').val();
+        var value2 = $('#value2').val();
         var t = getObject();
         var m = getObject2();
         var obj = t + m;
