@@ -1,5 +1,4 @@
 //test
-//alert("test");
 //get_default
 /*
 $(function() {
@@ -8,53 +7,40 @@ $(function() {
     alert(obj['place']);
 });
 */
+
 // localStorageのキー
-var key = "test";  
-var key2 = "memo";
+var key = "memotext";  
 // localStorageの文字列をJSONで取得
-//test
 var getObject = function() {
-    
     var str = localStorage.getItem(key);
     return JSON.parse(str);
 };
-//memo
-var getObject2 = function() {
-    
-    var str = localStorage.getItem(key2);
-    return JSON.parse(str);
-};
-
 // JSONを文字列でlocalStorageに保存
 var setObject = function(obj) {
     var str = JSON.stringify(obj);
-    alert(obj);
     localStorage.setItem(key, str);
-    localStorage.setItem(key2, str);
 };
 // localStorageに保存したデータの表示
 var showStorage = function() {
     var obj = getObject();
-    $('#value').val(obj['test']);
-    $('#value').val(obj['memo']);
+    $('#value2').val(obj['memo']);
 };
 $(function(){
     // オプションデータの更新
-    $('#put').click(function() {
-        var key = $('#key').val();
-        var key2 = $('#key2').val();
-        var value = $('#value').val();
-        var t = getObject();
-        var m = getObject2();
-        var obj = t + m;
+    $('#put2').click(function() {
+        var key = $('#key2').val();
+        alert(key);
+        var value = $('#value2').val();
+        alert(value);
+        var obj = getObject();
+        alert(obj);
         if (!obj) {
             obj = new Object();
         }
         obj[key] = value;
-        obj[key2] = value;
+        alert(value);
         setObject(obj);
         showStorage();
-
         alert("Update OK");
     });
     // オプションデータの表示
