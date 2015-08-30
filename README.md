@@ -1,10 +1,13 @@
 #zizai_customizer
 @chrome extention  
 ####Version Rules
-ver0.0.0.0  
-ver|major release|minor rel|inplements|bugfixes or change property|  
+ver0.0.0.0.0
+ver|major release|minor rel|inplements|codeadd|bugfix|
   
 ####History
+ver0.0.0.6,0.0.0.6.1
+  - bugfix
+  
 ver0.0.0.5 - 2015/08/30
   - change code4 = "AMP_出品フラグ"  
   

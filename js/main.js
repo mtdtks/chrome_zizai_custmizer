@@ -143,7 +143,7 @@ var enchant9 = function (){
     };
 
 //自店用コード5→AMP_出品フラグ 置き換え
-var enchant9 = function (){
+var enchant10 = function (){
     s='自店用コード5';
     d='AMP_出品フラグ*';
     document.body.innerHTML=document.body.innerHTML.replace(s,d,'g');
