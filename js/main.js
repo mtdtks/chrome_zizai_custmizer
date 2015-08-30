@@ -627,7 +627,7 @@ function default_val(place){
     }
     //AMP_出品フラグ*
     cd5=document.getElementsByName("code5");
-    if(cd4.item(0).value===""){
+    if(cd5.item(0).value===""){
     cd5.item(0).value="0_Amazonに出品する";
     }
 
