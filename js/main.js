@@ -625,6 +625,12 @@ function default_val(place){
     if(cd4.item(0).value===""){
     cd4.item(0).value="1_ハードカバー";
     }
+    //AMP_出品フラグ*
+    cd5=document.getElementsByName("code5");
+    if(cd4.item(0).value===""){
+    cd5.item(0).value="0_Amazonに出品する";
+    }
+
 }
 
 //在庫ステータスプルダウン初期値設定
