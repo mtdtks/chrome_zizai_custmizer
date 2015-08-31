@@ -736,7 +736,7 @@ if ( re.test(url) ){
         var obj = JSON.parse(response.data);
         //test
         //alert(obj['place']);
-        var optionPlace = obj['place'];
+        var optionPlace = obj.place;
         //alert(optionPlace);
         //runtime内からしか参照できない
         default_val(optionPlace);

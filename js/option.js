@@ -23,7 +23,7 @@ var setObject = function(obj) {
 // localStorageに保存したデータの表示
 var showStorage = function() {
     var obj = getObject();
-    $('#value').val(obj['place']);
+    $('#value').val(obj.place);
 };
 $(function(){
     // オプションデータの更新
@@ -32,7 +32,7 @@ $(function(){
         var value = $('#value').val();
         var obj = getObject();
         if (!obj) {
-            obj = new Object();
+          obj = new Object();
         }
         obj[key] = value;
         setObject(obj);
