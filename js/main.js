@@ -76,6 +76,10 @@ $(function () {
     });
 });
 */
+
+//optionPlace = "0";
+//optionMemo = "0";
+
 //自店用コード1→AMP_LowPrice
 var enchant = function (){
     s='自店用コード1';
@@ -632,7 +636,23 @@ function default_val(place){
     }
 
 }
+function default_val_memo(memo){ //memoの反映
+    var cd=document.getElementsByName("note5");
+    if(cd.item(0).value===""){
+    cd.item(0).value=memo;
+    }
 
+}
+/*
+//むりぽ
+var optionPlace;
+var optionMemo;
+//chrome.runtimeの値を渡すだけの関数
+function keyPipe(text,option){
+  option = text;
+  return option;
+}
+*/
 //在庫ステータスプルダウン初期値設定
 //販売可能をデフォルトにする
 function change_pulldown(){
@@ -729,23 +749,32 @@ if ( re.test(url) ){
     var idval = trval.match(/\d{8}/);　//8桁の数字
     console.log('NH_Original_ID:' + idval);
 
-    //background.jsから取得する
+    //■■■■■■memo■■■■■■■
+    //どうもchrome.runtimeはグローバル変数に取ってこれないみたいだ。
+    //しょうがないので関数default_val_memoを定義した。
+
+    //background.jsから取得する place
     chrome.runtime.sendMessage({method: "getLocalStorage", key: "test"}, function(response) {
         //test
         //alert(response.data);
         var obj = JSON.parse(response.data);
-        //test
-        //alert(obj['place']);
         var optionPlace = obj.place;
         //alert(optionPlace);
-        //runtime内からしか参照できない
         default_val(optionPlace);
-
+        //keyPipe(place, optionPlace);
+        //alert(keyPipe(place, optionPlace));
+    });
+    //background.jsから取得する memotext
+    chrome.runtime.sendMessage({method: "getLocalStorage_memo", key: "memo"}, function(response) {
+        var obj = JSON.parse(response.data);
+        var optionMemo = obj.memotext;
+        //alert("local: " + optionMemo);
+        default_val_memo(optionMemo);
     });
 
     if (idval === null){ //新規入力
         change_pulldown();
-    //    default_val();
+        //default_val(optionPlace); ローカル変数を外に出せない...
         console.log('zizai_mask:input_mode=enabled');
     } else {
         console.log('zizai_mask:edit_mode=enabled');　//更新、既に入力されている場合はデフォルトを変更しない。

@@ -2,9 +2,13 @@
 @chrome extention  
 ####Version Rules
 ver0.0.0.0.0  
-ver|major release|minor rel|inplements|codeadd and bugfix|  
+ver|major release|minor rel|Function Addition|codeadd and bugfix|  
   
 ####History
+ver0.0.1.7  
+  Function Addition
+  - add OptionManu:memottext
+
 ver0.0.0.6,0.0.0.7--
   - bugfix  
   
