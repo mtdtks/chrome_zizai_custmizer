@@ -5,6 +5,10 @@ ver0.0.0.0.0
 ver|major release|minor rel|Function Addition|codeadd and bugfix|  
   
 ####History
+
+ver0.0.1.8--
+  - update genre "目録ジャンル"  
+
 ver0.0.1.7  
   Function Addition
   - add OptionManu:memottext
