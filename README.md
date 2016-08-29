@@ -27,7 +27,7 @@ new!
   
   
 ####History
-ver0.0.1.9--
+ver0.0.1.9  
   - update genre:"目録分類"  
   
 ver0.0.1.8  

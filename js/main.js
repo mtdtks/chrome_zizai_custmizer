@@ -776,6 +776,7 @@ if ( re.test(url) ){
     enchant7();
     enchant8();
     enchant9();
+    enchant10();
 
     //プルダウンは最後に実行しないといけないみたい。
     selectchange();
