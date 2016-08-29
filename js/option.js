@@ -77,3 +77,29 @@ $(function(){ //memotext
     // オプションデータの表示
     showStorage2();
 });
+
+
+var getval = function (index, indval){
+  
+        var key = $('#'+index).val();
+        var value = $('#'+indval).val();
+        var obj = getObject(key);
+        if (!obj) {
+          obj = new Object();
+        }
+        obj[key] = value;
+        setObject(obj);
+        showStorage();
+        alert("保存しました\r" + key + ":" + value);
+ 
+};
+
+$(function(){
+    // オプションデータの更新
+    $('#putall').click(function() {
+        
+      getval("put2", "mtext");
+      getval("key", "value");
+   });
+});
+
