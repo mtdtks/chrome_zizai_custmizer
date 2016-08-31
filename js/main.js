@@ -80,6 +80,11 @@ function start() {
     window.alert('Hello World !!');
 }
 */
+var chLabel = function (old, newword){
+  o = old;
+  n = newword;
+  document.body.innerHTML = document.body.innerHTML.replace(o, n, 'g');
+};
 
 //自店用コード1→AMP_LowPrice
 var enchant = function (){
@@ -767,10 +772,16 @@ var picurl = /https:\/\/www\.kosho\.or\.jp\/koshoadmin\/products\/product\.php\?
 
 if ( re.test(url) ){
 
-    enchant();
-    enchant2();
-    enchant3();
-    enchant4();
+    chLabel('自店用コード1', 'AMP_LowPrice*');
+    chLabel('自店用テキスト1', 'ジャンル');
+    chLabel('（分類コード）', '');
+    chLabel('自店用テキスト2', '目録分類');
+    chLabel('（自店分類）', '');
+    chLabel('自店用テキスト3', '目録分類_サブ');
+    //enchant();
+    //enchant2();
+    //enchant3();
+    //enchant4();
     enchant5();
     enchant6();
     enchant7();
