@@ -80,10 +80,14 @@ function start() {
     window.alert('Hello World !!');
 }
 */
-var chLabel = function (old, newword){
-  o = old;
-  n = newword;
-  document.body.innerHTML = document.body.innerHTML.replace(o, n, 'g');
+
+
+/*
+ *@replace label to neweord 
+ *@Desc chLabel(changeWord, newWord)
+ */
+var chLabel = function (changeWord, newWord){
+  document.body.innerHTML = document.body.innerHTML.replace(changeWord, newWord, 'g');
 };
 
 //自店用コード1→AMP_LowPrice
@@ -772,12 +776,29 @@ var picurl = /https:\/\/www\.kosho\.or\.jp\/koshoadmin\/products\/product\.php\?
 
 if ( re.test(url) ){
 
+  var chName = {
+    '自店用コード1'    : 'AMP_LowPrice*',
+    '自店用テキスト1'  : 'ジャンル',
+    '（分類コード）'   : '',
+    '自店用テキスト2'  : '目録分類',
+    '（自店分類）'     : '',
+    '自店用テキスト3'  : '目録分類_サブ',
+  };
+
+  for(var key in chName){
+    //test ok
+    //alert("key=" + key + ", " + "chName[key]=" + chName[key]);
+    chLabel(key, chName[key]);
+  }
+
+/*
     chLabel('自店用コード1', 'AMP_LowPrice*');
     chLabel('自店用テキスト1', 'ジャンル');
     chLabel('（分類コード）', '');
     chLabel('自店用テキスト2', '目録分類');
     chLabel('（自店分類）', '');
     chLabel('自店用テキスト3', '目録分類_サブ');
+*/
     //enchant();
     //enchant2();
     //enchant3();
