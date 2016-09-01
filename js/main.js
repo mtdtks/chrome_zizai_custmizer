@@ -783,6 +783,12 @@ if ( re.test(url) ){
     '自店用テキスト2'  : '目録分類',
     '（自店分類）'     : '',
     '自店用テキスト3'  : '目録分類_サブ',
+    '自店用テキスト4'  : '書籍_サイズNo.*',
+    '自店用テキスト5'  : '在庫メモ',
+    '自店用コード2'    : 'AMP販売価格',
+    '自店用コード3'    : '商品ランク*',
+    '自店用コード4'    : '書籍_形態№*',
+    '自店用コード5'    : 'AMP_出品フラグ*',
   };
 
   for(var key in chName){
@@ -803,12 +809,12 @@ if ( re.test(url) ){
     //enchant2();
     //enchant3();
     //enchant4();
-    enchant5();
-    enchant6();
-    enchant7();
-    enchant8();
-    enchant9();
-    enchant10();
+    //enchant5();
+    //enchant6();
+    //enchant7();
+    //enchant8();
+    //enchant9();
+    //enchant10();
 
     //プルダウンは最後に実行しないといけないみたい。
     selectchange();
