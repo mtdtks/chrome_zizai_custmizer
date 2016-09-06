@@ -1,169 +1,14 @@
 ///////////////////////////////////////////////////////////
-// (c)2013 casley consulting inc, all right reserved.
 // author mtdtks 2015/08/17
 ///////////////////////////////////////////////////////////
 
-//zizai_mask
-// ==UserScript==
-// @name         zizai_mask
-// @namespace    git@bitbucket.org:mtdtks/zizai_mask.git
-// @namespace    http://matsuokashobo.com/zizai_mask/0.1.3/zizai_mask.user.js
-// @version      0.1.3.1
-// @description  zizaiの入力フォームを独自仕様にマスクし、プルダウンリストを追加します。
-// @include      https://www.kosho.or.jp/koshoadmin/products/*
-// @include      https://www.kosho.or.jp/koshoadmin/order/*
-// @exclude      https://www.kosho.or.jp/koshoadmin/order/edit.php
-// @author       TakashiMatsuda:matsuda@matsuokashobo.com
-// @require      http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js
-// @grant        none
-// ==/UserScript==
-
-
-//====={初期設定}======================
-
-//var place = "12_配送センター";
-//'12_配送センター' : '12_配送センター',
-//'10_支店' : '10_支店',
-//'9_本店' : '9_本店',
-
-//▼▼▼zizai_mask_code_start▼▼▼
-/*
-$(function () {
-
-    $(".comment4_add_button").click(function(){
-        comment4 = $(':input[name="comment4"]').val();
-
-        if (comment4.length === 0 || comment4.match(/[\n\r]$/)) {
-            $(":input[name='comment4']").val(comment4 + $(this).find('span').text());
-        } else {
-            $(":input[name='comment4']").val(comment4 + ' ' + $(this).find('span').text());
-        }
-        return false;
-    });
-
-
-    // 冊数のフォーカスが外れたら、   セット販売を自動で設定する
-    $("input[name='sets_num']").blur(function(){
-        if ($("input[name='sets_num']").val().match(/^[2-9２-９二三四五六七八九十弐参拾百千万萬億兆〇].*$/)) {
-            $("input[name='sets']").val(['1']);
-        } else if ($("input[name='sets_num']").val().match(/^[1１一壱][0-9０-９一二三四五六七八九十壱弐参拾百千万萬億兆〇].*$/)) {
-            $("input[name='sets']").val(['1']);
-        } else {
-            $("input[name='sets']").val(['0']);
-        }
-    });
-
-        // ローディング
-    send_flg = false;
-    $('#form1').submit(function() {
-        if(send_flg){
-            alert("処理中のため、操作出来ません。");
-            return false;
-        }
-        send_flg = true;
-        $.blockUI({
-            title: '処置中です',
-            message: $('#loading_block'),
-            fadeIn: 0,
-        });
-    });
-});
-*/
-
-//optionPlace = "0";
-//optionMemo = "0";
-
-//test
-/*
-document.OnLoad = start();
-function start() {
-    window.alert('Hello World !!');
-}
-*/
-
-
-/*
+/** ラベルを置き換える関数
  *@replace label to neweord 
  *@Desc chLabel(changeWord, newWord)
  */
 var chLabel = function (changeWord, newWord){
   document.body.innerHTML = document.body.innerHTML.replace(changeWord, newWord, 'g');
 };
-
-//自店用コード1→AMP_LowPrice
-var enchant = function (){
-    s='自店用コード1';
-    d='AMP_LowPrice*';
-    document.body.innerHTML=document.body.innerHTML.replace(s,d,'g');
-    };
-//自店用テキスト1(分類コード)→ジャンル置き換え
-var enchant2 = function (){
-    s='自店用テキスト1';
-    d='ジャンル*';
-    document.body.innerHTML=document.body.innerHTML.replace(s,d,'g');
-    s2='（分類コード）';
-    d2='';
-    document.body.innerHTML=document.body.innerHTML.replace(s2,d2,'g');
-    };
-//自店用テキスト2(自店分類)→目録分類 置き換え
-var enchant3 = function (){
-    s='自店用テキスト2';
-    d='目録分類';
-    document.body.innerHTML=document.body.innerHTML.replace(s,d,'g');
-    s2='（自店分類）';
-    d2='';
-    document.body.innerHTML=document.body.innerHTML.replace(s2,d2,'g');
-    };
-//自店用テキスト3→目録分類_サブ 置き換え
-var enchant4 = function (){
-    s='自店用テキスト3';
-    d='目録分類_サブ';
-    document.body.innerHTML=document.body.innerHTML.replace(s,d,'g');
-    };
-
-//自店用テキスト4→書籍_サイズNo._サブ 置き換え
-var enchant5 = function (){
-    s='自店用テキスト4';
-    d='書籍_サイズNo.*';
-    document.body.innerHTML=document.body.innerHTML.replace(s,d,'g');
-    };
-
-//自店用テキスト5→在庫メモ 置き換え
-var enchant6 = function (){
-    s='自店用テキスト5';
-    d='在庫メモ';
-    document.body.innerHTML=document.body.innerHTML.replace(s,d,'g');
-    };
-
-//自店用コード2→AMP販売価格 置き換え
-var enchant7 = function (){
-    s='自店用コード2';
-    d='AMP販売価格';
-    document.body.innerHTML=document.body.innerHTML.replace(s,d,'g');
-    };
-
-//自店用コード3→商品ランク 置き換え
-var enchant8 = function (){
-    s='自店用コード3';
-    d='商品ランク*';
-    document.body.innerHTML=document.body.innerHTML.replace(s,d,'g');
-    };
-
-//自店用コード4→書籍_形態№ 置き換え
-var enchant9 = function (){
-    s='自店用コード4';
-    d='書籍_形態№*';
-    document.body.innerHTML=document.body.innerHTML.replace(s,d,'g');
-    };
-
-//自店用コード5→AMP_出品フラグ 置き換え
-var enchant10 = function (){
-    s='自店用コード5';
-    d='AMP_出品フラグ*';
-    document.body.innerHTML=document.body.innerHTML.replace(s,d,'g');
-    };
-
-
 
 //ジャンル-プルダウン
 function selectchange(){
@@ -673,6 +518,12 @@ function default_val(place){
     if(sp.item(0).value===""){
     sp.item(0).value=place;
     }
+    //冊数を入力
+    nm=document.getElementsByName("sets_num");
+    if(nm.item(0).value===""){
+    nm.item(0).value="1冊";
+    }
+
     //AMP_LowPriceを入力
     cd1=document.getElementsByName("code1");
     if(cd1.item(0).value===""){
@@ -791,30 +642,11 @@ if ( re.test(url) ){
     '自店用コード5'    : 'AMP_出品フラグ*',
   };
 
-  for(var key in chName){
+  for(var key in chName){//json形式を交互にループ
     //test ok
     //alert("key=" + key + ", " + "chName[key]=" + chName[key]);
     chLabel(key, chName[key]);
   }
-
-/*
-    chLabel('自店用コード1', 'AMP_LowPrice*');
-    chLabel('自店用テキスト1', 'ジャンル');
-    chLabel('（分類コード）', '');
-    chLabel('自店用テキスト2', '目録分類');
-    chLabel('（自店分類）', '');
-    chLabel('自店用テキスト3', '目録分類_サブ');
-*/
-    //enchant();
-    //enchant2();
-    //enchant3();
-    //enchant4();
-    //enchant5();
-    //enchant6();
-    //enchant7();
-    //enchant8();
-    //enchant9();
-    //enchant10();
 
     //プルダウンは最後に実行しないといけないみたい。
     selectchange();
@@ -859,6 +691,8 @@ if ( re.test(url) ){
         var obj = JSON.parse(response.data);
         var optionPlace = obj.place;
         //alert(optionPlace);
+
+       //デフォルト値の入力
        default_val(optionPlace);
         //keyPipe(place, optionPlace);
         //alert(keyPipe(place, optionPlace));
@@ -868,6 +702,8 @@ if ( re.test(url) ){
         var obj = JSON.parse(response.data);
         var optionMemo = obj.memotext;
         //alert("local: " + optionMemo);
+
+        //メモ欄の入力
         default_val_memo(optionMemo);
     });
 
