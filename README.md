@@ -1,6 +1,6 @@
 #for zizai worker.
   
-zizai_customizer 0.0.1.9  
+zizai_customizer 0.0.2.0  
   
 ###バージョン・ルール
 ver|メジャー|マイナー|機能実装|コード追加、バグフィックス|  
@@ -27,6 +27,9 @@ new!
   
   
 ####History
+ver0.0.2.0  
+  - update コード整理、短縮。bugfix
+  
 ver0.0.1.9  
   - update genre:"目録分類"  
   
