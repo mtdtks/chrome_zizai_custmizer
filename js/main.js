@@ -4,11 +4,51 @@
 
 /** ラベルを置き換える関数
  *@replace label to neweord 
- *@Desc chLabel(changeWord, newWord)
+ *@Usage chLabel(changeWord, newWord)
+ *@Param {string} changeWord - 変更する対象のID
+ *@Param {string} neWord - 置き換える文字列
  */
 var chLabel = function (changeWord, newWord){
   document.body.innerHTML = document.body.innerHTML.replace(changeWord, newWord, 'g');
 };
+
+/** プルダウンメニューを追加する
+ *プルダウンループ
+ *@Usage addSelecter([{string} rabelName],[{string} listName])
+ *@Param {string} rabelName - 追加する項目のターゲットのID
+ *@Param {string} listName - 追加するリストのID
+ */
+
+/*
+function addSelecter(rabelName, listName){
+    chg = document.getElementsByName("rabelName")[0];
+    chg.setAttribute('list', listName);
+    chg.setAttribute('autocomplete', 'on');
+
+    var element = document.createElement('datalist');
+    element.id = listName;
+    var objBody = document.getElementsByName("rabelName")[0];
+    objBody.appendChild(element);
+
+    var select = document.getElementById(listName);
+    var selectBox = {
+        'listID1'     : 'listValue1',
+        'listID2'   : 'listValue2',
+        'listID3'      : 'listValue3',
+    };
+
+    for ( var i in selectBox ) {
+        var option = document.createElement('option');
+
+        option.setAttribute('value', i);
+        option.innerHTML = selectBox[i];
+
+    select.appendChild(option);
+    }
+}
+*/
+
+
 
 //ジャンル-プルダウン
 function selectchange(){
