@@ -717,7 +717,7 @@ if ( re.test(url) ){
     //NHマスターid確認
     //新規はnull
     var trval = $('tr').eq(20).text(); //trから探す
-    var idval = trval.match(/\d{8}/);　//8桁の数字
+    var idval = trval.match(/\d{8}/); //8桁の数字
     console.log('NH_Original_ID:' + idval);
 
     //■■■■■■memo■■■■■■■
