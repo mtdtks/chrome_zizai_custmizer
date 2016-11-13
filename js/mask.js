@@ -1,4 +1,9 @@
 
+/*
+ * 入力項目をマスクする為のスクリプト。現在まだテスト中
+ */
+
+
 var hyde1 = function (){
   //document.getElementsByName("label").style.display = "none";
   //document.getElementsByName("label").input = "test";
