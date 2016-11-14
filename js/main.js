@@ -56,6 +56,13 @@ function addSelecter(rabelName, listName){
 */
 
 // プルダウンループ
+/*
+ * @desc サジェスト・リストを項目に追加する
+ * @Usage sadjestAdd(elementID, SadjestData, categoryName)
+ * @Param {String} elementID - 対象のDOMのIDorNAME
+ * @Param {Array} SdData - サジェストのデータ配列
+ * @Param {String} categ_name - サジェストデータにはIDが必要、重複はNG
+ */
 function sadjestAdd(ID, SdData, categ_name){
     chg = document.getElementsByName(ID)[0];
     //console.log(chg);
