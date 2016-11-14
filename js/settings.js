@@ -4,12 +4,93 @@
 
 // 各項目のIDとCLASS
 // 大抵classは使用しないようだ
+// *.ID = elementById
+// *.NAME = elementsByName
 
 // 在庫カテゴリ
 var ZAIKO_CATEGORY_ID = "book_flg";
 // ISBN
 var ISBN_ID = "master_search_isbn";
+// 書名
+var TITLE_ID = "master_search_name";
+// 巻号
+var VOLUME_NAME = "volume";
+// 版表示
+var EDITION_NAME = "edition";
+//書名よみ
+var TITLE_KANA_NAME = "name_kana";
+// 著者
+var AUTHOR_ID = "master_search_author";
+// 著者よみ
+var AUTHOR_KANA_NAME = "author_kana";
+// 出版元
+var PUBLISH_ID = "master_search_publisher";
+// 初版年
+var FIRSTPUB_NAME = "first_published_year_txt";
+// ページ数
+var PAGES_NAME = "quantity";
+// サイズ(版型)
+var SIZE_NAME = "size";
 
+//////////
+//補足情報
+//////////
+// 書名別名
+var ALT_TITLE_NAME = "alternate_titles";
+// 書名別名よみ
+var ALT_TITLEKANA_NAME = "alternate_titles_kana";
+// シリーズ名
+var SERIES_NAME = "series_titles";
+// シリーズ巻号
+var SERIES_VOL_NAME = "series_titles_volume";
+// レーベル名
+var LABEL_NAME = "label";
+// 物理的属性
+var ATTRIBUTE_NAME = "attribute";
+// ISSN
+var ISSN_NAME = "issn";
+// ASIN
+var ASIN_NAME = "asin";
+
+//////////////
+//在庫管理情報
+//////////////
+// 自店コンディションコード
+var SHOP_CONDITION_NAME = "shop_condition";
+// Amazonコンディションコード
+var AMAZON_COND_NAME = "classcategory_id2";
+//SKU
+var SKU_NAME = "sku";
+// 表示用タグ
+var DISP_TAG = "comment5";
+
+///////////////////
+//自店用テキスト1-5
+///////////////////
+// ジャンル
+var GENRE = "note1";
+// 目録分類
+var MOKUROKU_GENRE = "note2";
+// 目録分類_サブ
+var MOKUROKU_SUB = "note3";
+// 書籍_サイズ
+var SIZE = "note4";
+// 在庫メモ
+var MEMO = "note5";
+
+//////////////
+//自店用コード
+//////////////
+// AMP_LowPrice
+var AMP_LOWPRICE = "code1";
+// AMP販売価格
+var AMP_SELLPRICE = "code2";
+// 商品ランク
+var ITEM_RANK = "code3";
+// 書籍_形態No.
+var ITEM_TYPE = "code4";
+// AMP_出品フラグ
+var AMP_FLAG = "code5";
 
 
 /*
@@ -169,4 +250,9 @@ var MAIN_GENRE = {
   '982_中国文学・漢文漢詩':'982中国文学・漢文漢詩',
 };
 
+var AMP_OPTION = {
+  '0_Off'     : '0_Off',
+  '1_Watch'   : '1_Watch',
+  '2_On'      : '2_On',
+};
 
