@@ -25,6 +25,7 @@
           "js/regex.js",
           "js/main.js",
           "js/mask.js",
+          "js/change_color.js",
           "js/pulldown.js"
         ]
       }
