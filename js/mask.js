@@ -24,5 +24,5 @@ var hydeISBN = function (){
 
 
 //実行
-hyde1();
-hydeISBN();
+//hyde1();
+//hydeISBN();

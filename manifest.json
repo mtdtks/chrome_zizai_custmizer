@@ -22,6 +22,7 @@
           "js/jquery-2.1.4.min.js",
           "test/test.js",
           "js/settings.js",
+          "js/regex.js",
           "js/main.js",
           "js/mask.js",
           "js/pulldown.js"
